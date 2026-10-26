@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>GreenHaven — Home &amp; Garden</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#faf7f0;color:#2d3325;font-family:'Jost',sans-serif}
+header{max-width:1080px;margin:0 auto;padding:20px 22px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:30px;color:#3d5a3a}.logo span{color:#c05f2a}
+.btn{background:#3d5a3a;color:#fff;border:0;padding:13px 24px;border-radius:999px;font-weight:600;cursor:pointer}
+.feature{max-width:1080px;margin:6px auto;padding:0 22px;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+.feature h1{font-family:'Playfair Display',serif;font-size:50px;line-height:1.05;margin:0 0 12px}
+.feature p{color:#5c6650;font-size:17px}
+.img{height:320px;border-radius:20px;background:linear-gradient(135deg,#7fae6e,#3d5a3a 60%,#c05f2a);display:flex;align-items:flex-end;padding:20px;color:#fff;font-size:20px}
+h2{font-family:'Playfair Display',serif;text-align:center;font-size:32px;margin:40px 0 4px}
+.sub{text-align:center;color:#5c6650;margin:0 0 20px}
+.arts{max-width:1080px;margin:0 auto;padding:0 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid #e8e2d2;border-radius:16px;overflow:hidden}
+.th{height:150px;display:flex;align-items:flex-end;padding:12px;color:#fff;font-weight:600}
+.ct{padding:16px}.ct b{font-family:'Playfair Display',serif;font-size:19px}.ct p{color:#5c6650;font-size:14px}
+.svc{max-width:1080px;margin:0 auto;padding:0 22px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.s{background:#fff;border:1px solid #e8e2d2;border-radius:16px;padding:22px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.s b{font-family:'Playfair Display',serif;font-size:20px}.s span{color:#c05f2a;font-weight:600}
+.s button{width:auto;padding:10px 18px}
+.book{max-width:640px;margin:26px auto;padding:26px;background:#fff;border:1px solid #e8e2d2;border-radius:20px}
+.book input,.book select{width:100%;padding:12px;margin:6px 0;border:1px solid #d8d0b8;border-radius:10px;font-size:15px}
+.ok{background:#e6f4ea;color:#1e5c2e;padding:12px;border-radius:10px;margin-top:12px;display:none}
+.news{max-width:640px;margin:0 auto 30px;display:flex;gap:10px;padding:0 22px}
+.news input{flex:1;padding:13px;border:1px solid #d8d0b8;border-radius:999px}
+footer{text-align:center;color:#5c6650;padding:22px;font-size:13px}
+@media(max-width:700px){.feature,.arts,.svc{grid-template-columns:1fr}.feature h1{font-size:36px}}
+</style></head><body>
+<header><div class="logo">Green<span>Haven</span></div><button class="btn" onclick="document.getElementById('book').scrollIntoView()">Book a consult</button></header>
+<section class="feature"><div><p style="letter-spacing:.2em;color:#c05f2a;font-weight:600">HOME &amp; GARDEN MAGAZINE</p><h1>A home that grows with you.</h1><p>Design ideas, planting calendars and honest product picks — for balconies, backyards and everything between.</p></div><div class="img">The Autumn Garden Edit — 24 ideas for small spaces</div></section>
+<h2>From the magazine</h2><p class="sub">Practical, seasonal, no jargon.</p>
+<section class="arts">
+<div class="card"><div class="th" style="background:linear-gradient(120deg,#8fbf7a,#3d5a3a)">Balcony gardens</div><div class="ct"><b>12 plants that survive neglect</b><p>For people who forget to water. We tested them, honestly.</p></div></div>
+<div class="card"><div class="th" style="background:linear-gradient(120deg,#d99a5b,#c05f2a)">Indoor light</div><div class="ct"><b>Light, explained simply</b><p>North window? South? Match the plant to the light you have.</p></div></div>
+<div class="card"><div class="th" style="background:linear-gradient(120deg,#a8c686,#5c7a4e)">Soil school</div><div class="ct"><b>Soil is not dirt</b><p>The 10-minute guide that saves most beginner gardens.</p></div></div>
+</section>
+<h2>Services</h2><p class="sub">Pick one — the booking form fills itself in.</p>
+<section class="svc">
+<div class="s"><div><b>Garden design</b><br/><span style="color:#5c6650">Full plan, plants included</span></div><span>from $299</span><button class="btn" onclick="pick('Garden design')">Book</button></div>
+<div class="s"><div><b>Seasonal care visits</b><br/><span style="color:#5c6650">Pruning, feeding, pest checks</span></div><span>from $89</span><button class="btn" onclick="pick('Seasonal care visits')">Book</button></div>
+<div class="s"><div><b>Balcony makeovers</b><br/><span style="color:#5c6650">Small space, big change</span></div><span>from $199</span><button class="btn" onclick="pick('Balcony makeovers')">Book</button></div>
+<div class="s"><div><b>Kitchen garden setup</b><br/><span style="color:#5c6650">Herbs &amp; salads, year round</span></div><span>from $149</span><button class="btn" onclick="pick('Kitchen garden setup')">Book</button></div>
+</section>
+<section class="book" id="book"><h2 style="margin:0 0 10px;text-align:left">Book a consultation</h2>
+<form onsubmit="book(event)"><input id="kname" required placeholder="Your name"/><input id="kphone" required placeholder="Phone"/>
+<select id="ksvc"><option>Garden design</option><option>Seasonal care visits</option><option>Balcony makeovers</option><option>Kitchen garden setup</option></select>
+<input id="kdate" type="date" required/><button class="btn" style="width:100%">Request booking →</button><div class="ok" id="ok"></div></form></section>
+<div class="news"><input id="nmail" placeholder="Email for the Sunday garden letter"/><button class="btn" onclick="sub()">Subscribe</button></div>
+<footer>GreenHaven · Static site — bookings &amp; subscriptions are saved in your browser. Connect a form backend to receive them for real.</footer>
+<script>
+function pick(s){document.getElementById('ksvc').value=s;document.getElementById('book').scrollIntoView()}
+function book(e){e.preventDefault();let ref='GH-'+Math.floor(1000+Math.random()*9000);let ok=document.getElementById('ok');ok.style.display='block';ok.innerHTML=`Booked! Reference <b>${ref}</b> — ${document.getElementById('ksvc').value} on ${document.getElementById('kdate').value}. We will call ${document.getElementById('kname').value} to confirm. (Demo: nothing sent.)`}
+function sub(){let m=document.getElementById('nmail').value.trim();if(!m.includes('@')){alert('Enter a valid email.');return}localStorage.setItem('gh_news',m);alert('Subscribed! The Sunday letter will go to '+m+' once you connect an email service. (Demo: saved locally only.)')}
+</script></body></html>
